@@ -7,3 +7,7 @@ app=FastAPI()
 Base.metadata.create_all(bind=engine)
 
 app.include_router(auth.router,prefix="/auth")
+
+@app.get("/")
+def Home():
+    return "Hello everyone"
